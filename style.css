@@ -12,7 +12,7 @@
  box-sizing:border-box;
 }
 
-/* 🧱 BASE ESTÁVEL */
+/* 🧱 BASE (SEM FLEX — ISSO CORRIGE O SCROLL DO PC) */
 body{
   min-height: 100vh;
   margin: 0;
@@ -22,25 +22,10 @@ body{
 
   overflow-x: hidden;
 
-  /* ❗ IMPORTANTE: remove o flex que quebrava o scroll */
-  display: block;
-
   background: transparent;
 }
 
 /* 🌌 FUNDO FIXO REAL */
-.bg{
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-
-  background:
-    radial-gradient(circle at top left, rgba(255,215,120,.18), transparent 45%),
-    radial-gradient(circle at bottom right, rgba(218,165,32,.15), transparent 50%),
-    linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
-}
-
-/* ✨ GLITTER (NÃO INTERFERE NO LAYOUT) */
 .bg{
   position: fixed;
   inset: 0;
@@ -52,18 +37,42 @@ body{
     linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
 }
 
+/* ✨ GLITTER (FUNCIONA NO PC E MOBILE) */
+.bg::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,215,0,.75) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,235,150,.6) 1px, transparent 2px);
+
+  background-size: 80px 80px, 120px 120px, 160px 160px;
+
+  transform: rotate(70deg);
+  animation: glitterSnow 45s linear infinite;
+
+  opacity: .22;
+
+  z-index: 1;
+}
+
+/* 🎬 animação suave estilo neve dourada */
 @keyframes glitterSnow{
  0%{
-  transform: rotate(70deg) translateY(-20%);
-  background-position: 0 -1000px, 0 -1200px, 0 -1400px;
+  transform: rotate(70deg) translateY(-30%);
+  background-position: 0 -1200px, 0 -1400px, 0 -1600px;
  }
+
  100%{
-  transform: rotate(70deg) translateY(20%);
-  background-position: 0 1000px, 0 1200px, 0 1400px;
+  transform: rotate(70deg) translateY(30%);
+  background-position: 0 1200px, 0 1400px, 0 1600px;
  }
 }
 
-/* 📦 CONTAINER SIMPLES (SEM BUG DE VIEWPORT) */
+/* 📦 CONTAINER CENTRALIZADO CORRETAMENTE */
 .container{
   width: min(900px, 100%);
   margin: 0 auto;
@@ -84,6 +93,7 @@ h1{
  font-weight:700;
  font-size:3.6rem;
  color:#fff;
+
  text-shadow:
  0 2px 0 rgba(0,0,0,.35),
  0 10px 30px rgba(0,0,0,.45),
@@ -152,7 +162,7 @@ footer{
  color:rgba(255,255,255,.92);
 }
 
-/* 📱 MOBILE LIMPO E ESTÁVEL */
+/* 📱 MOBILE ESTÁVEL */
 @media (max-width: 700px){
 
   h1{
@@ -181,8 +191,8 @@ footer{
     font-size:0.7rem;
   }
 
-  /* ✨ reduz impacto do glitter no mobile */
+  /* leve redução do glitter no mobile */
   .bg::after{
-    opacity:0.15;
+    opacity:0.12;
   }
 }
