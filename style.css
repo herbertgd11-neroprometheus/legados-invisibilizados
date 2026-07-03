@@ -189,7 +189,11 @@ footer{
 }
 
 /* 📱 responsivo */
-@media(max-width:500px){
+@media(max-width:700px){
+  body::before{
+    animation: none;
+    opacity: .15;
+}
 
  h1{
   font-size:1.55rem;
