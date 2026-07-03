@@ -22,8 +22,7 @@ body{
  color:var(--dark);
  overflow:hidden;
  position:relative;
-}
- 
+
  /* 🟡 OURO FUMÊ (mais escuro e elegante) */
  background:
  radial-gradient(circle at top left, rgba(255,215,120,.18), transparent 45%),
@@ -67,12 +66,9 @@ body::before{
  }
 }
 
-/* 📦 CONTAINER SIMPLES (SEM BUG DE VIEWPORT) */
+/* 📦 CONTAINER */
 .container{
-  width: min(900px, 100%);
-  margin: auto;
-  position: relative;
-  z-index: 1;
+ width:min(900px,100%);
 }
 
 /* 🏛 HEADER COM PLACA DE MUSEU */
@@ -178,6 +174,7 @@ button{
 
 button:hover{
  transform:translateY(-3px) scale(1.02);
+ box-shadow:0 18px 40px rgba(0,0,0,.3);
 }
 
 /* 🏷 footer */
@@ -185,39 +182,42 @@ footer{
  margin-top:30px;
  text-align:center;
  color:rgba(255,255,255,.92);
+ line-height:1.7;
 }
 
 /* 📱 responsivo */
-@media (max-width: 700px){
+@media(max-width:700px){
 
-  h1{
-    font-size:1.6rem;
-  }
+ h1{
+  font-size:1.55rem;
+ }
 
-  .subtitle{
-    font-size:0.78rem;
-    line-height:1.4;
-  }
+ .subtitle{
+  font-size:0.780rem;
+  line-height:1.4;
+  margin-top:12px;
+  padding:0 10px;
+ }
 
-  .card{
-    padding:25px;
-  }
+ .card{
+  padding:25px;
+ }
 
-  #mensagem{
-    font-size:1.3rem;
-  }
+ #mensagem{
+  font-size:1.3rem;
+ }
 
-  button{
-    font-size:0.8rem;
-    padding:12px 20px;
-  }
+ /* 🔘 BOTÃO NO CELULAR */
+ button{
+  font-size:0.8rem;
+  padding:12px 20px;
+  border-radius:10px;
+ }
 
-  footer{
-    font-size:0.7rem;
-  }
-
-  /* ✨ reduz impacto do glitter no mobile */
-  .bg::after{
-    opacity:0.15;
-  }
+ /* 🏷 RODAPÉ NO CELULAR */
+ footer{
+  font-size:0.70rem;
+  line-height:1.4;
+  padding:0 10px;
+ }
 }
