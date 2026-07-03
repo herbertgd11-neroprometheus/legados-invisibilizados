@@ -12,13 +12,22 @@
  box-sizing:border-box;
 }
 
-/* 🔒 TRAVA TOTAL DO BODY */
-html, body{
-  height:100%;
-  overflow:hidden;
+/* 🧱 BASE ESTÁVEL */
+body{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* 🟡 FUNDO FIXO REAL */
+/* 🌌 FUNDO FIXO REAL */
 .bg{
   position: fixed;
   inset: 0;
@@ -30,12 +39,13 @@ html, body{
     linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
 }
 
-/* ✨ GLITTER (DESKTOP SÓ) */
+/* ✨ GLITTER (NÃO INTERFERE NO LAYOUT) */
 .bg::after{
   content:"";
-  position:absolute;
-  inset:-50%;
+  position: fixed;
+  inset: -50%;
   pointer-events:none;
+  z-index: -1;
 
   background-image:
     radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
@@ -46,34 +56,29 @@ html, body{
 
   transform: rotate(70deg);
   animation: glitterSnow 35s linear infinite;
-  opacity:.25;
+  opacity: .25;
 }
 
 @keyframes glitterSnow{
  0%{
   transform: rotate(70deg) translateY(-20%);
-  background-position:0 -1000px, 0 -1200px, 0 -1400px;
+  background-position: 0 -1000px, 0 -1200px, 0 -1400px;
  }
  100%{
   transform: rotate(70deg) translateY(20%);
-  background-position:0 1000px, 0 1200px, 0 1400px;
+  background-position: 0 1000px, 0 1200px, 0 1400px;
  }
 }
 
-/* 📦 ÁREA DE SCROLL (SÓ AQUI ROLA) */
+/* 📦 CONTAINER SIMPLES (SEM BUG DE VIEWPORT) */
 .container{
+  width: min(900px, 100%);
+  margin: auto;
   position: relative;
-  height: 100vh;
-  overflow-y: auto;
-
-  width: min(900px,100%);
-  margin: 0 auto;
-  padding: 40px 20px;
-
   z-index: 1;
 }
 
-/* HEADER */
+/* 🏛 HEADER */
 header{
  text-align:center;
  margin-bottom:30px;
@@ -82,7 +87,7 @@ header{
 h1{
  font-family:"Cinzel Decorative", cursive;
  font-weight:700;
- font-size:3.8rem;
+ font-size:3.6rem;
  color:#fff;
  text-shadow:
  0 2px 0 rgba(0,0,0,.35),
@@ -99,7 +104,7 @@ h1{
  text-shadow:0 2px 10px rgba(0,0,0,.25);
 }
 
-/* CARD */
+/* 🪶 CARD */
 .card{
  background:rgba(255,248,231,.97);
  border-radius:22px;
@@ -127,7 +132,7 @@ h1{
  color:#2a1a10;
 }
 
-/* BOTÃO */
+/* 🔘 BOTÃO */
 button{
  display:block;
  margin:35px auto 0;
@@ -145,19 +150,15 @@ button:hover{
  transform:translateY(-3px) scale(1.02);
 }
 
-/* FOOTER */
+/* 🏷 FOOTER */
 footer{
  margin-top:30px;
  text-align:center;
  color:rgba(255,255,255,.92);
 }
 
-/* 📱 MOBILE */
+/* 📱 MOBILE LIMPO E ESTÁVEL */
 @media (max-width: 700px){
-
-  .bg::after{
-    display:none !important;
-  }
 
   h1{
     font-size:1.6rem;
@@ -183,5 +184,10 @@ footer{
 
   footer{
     font-size:0.7rem;
+  }
+
+  /* ✨ reduz impacto do glitter no mobile */
+  .bg::after{
+    opacity:0.15;
   }
 }
