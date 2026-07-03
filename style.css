@@ -23,18 +23,6 @@ body{
  overflow:hidden;
  position:relative;
 }
-
-/* 🌌 FUNDO FIXO REAL */
-.bg{
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-
-  background:
-    radial-gradient(circle at top left, rgba(255,215,120,.18), transparent 45%),
-    radial-gradient(circle at bottom right, rgba(218,165,32,.15), transparent 50%),
-    linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
-}
  
  /* 🟡 OURO FUMÊ (mais escuro e elegante) */
  background:
