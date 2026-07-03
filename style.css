@@ -32,7 +32,7 @@ body{
 }
 
 /* ✨ GLITTER DIAGONAL REAL */
-.bg::after{
+body::before{
  content:"";
  position:fixed;
  top:-60%;
