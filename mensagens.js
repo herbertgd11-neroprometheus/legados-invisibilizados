@@ -1,6 +1,9 @@
 const mensagens = [
   {
-    inspiracao: "Conhecer essas mulheres é reconhecer a riqueza da nossa própria História."
+      inspiracao: "Seja resiliente como Hannah Arendt."
+  },
+  {
+    inspiracao: "Descubra o mundo como Marie Curie."
   },
   {
     inspiracao: "Grandes transformações começam quando escolhemos conhecer histórias antes invisibilizadas."
@@ -34,7 +37,7 @@ const mensagens = [
   },
   {
     inspiracao: "O reconhecimento é uma forma de justiça."
-  }
+  },
   {
    inspiracao: "Defenda o conhecimento como Hipátia de Alexandria"
   }
