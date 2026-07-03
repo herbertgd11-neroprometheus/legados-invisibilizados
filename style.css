@@ -1,34 +1,37 @@
 :root{
- --gold:#DAA520;
- --gold2:#F2C14E;
- --gold3:#B8860B;
- --dark:#2A1E12;
- --ivory:#FFF8E7;
+  --gold:#DAA520;
+  --gold2:#F2C14E;
+  --gold3:#B8860B;
+  --dark:#2A1E12;
+  --ivory:#FFF8E7;
 }
 
 *{
- margin:0;
- padding:0;
- box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* 🧱 BASE (SEM FLEX — ISSO CORRIGE O SCROLL DO PC) */
+/* 🧱 BASE */
 body{
- min-height:100vh;
- display:flex;
- justify-content:center;
- align-items:center;
- padding:40px 20px;
- font-family:'Inter',sans-serif;
- color:var(--dark);
- overflow:hidden;
- position:relative;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 20px;
 
-/* 🌌 FUNDO FIXO REAL */
+  font-family:'Inter',sans-serif;
+  color:var(--dark);
+
+  overflow:hidden;
+  position:relative;
+}
+
+/* 🌌 FUNDO FIXO */
 .bg{
-  position: fixed;
-  inset: 0;
-  z-index: 0;
+  position:fixed;
+  inset:0;
+  z-index:0;
 
   background:
     radial-gradient(circle at top left, rgba(255,215,120,.18), transparent 45%),
@@ -36,136 +39,143 @@ body{
     linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
 }
 
-/* ✨ GLITTER DIAGONAL REAL */
-body::before{
- content:"";
- position:fixed;
- top:-60%;
- left:-60%;
- width:220%;
- height:220%;
- pointer-events:none;
+/* ✨ GLITTER FUNCIONANDO (PC + MOBILE) */
+.bg::after{
+  content:"";
+  position:fixed;
+  inset:-50%;
+  pointer-events:none;
 
- background-image:
- radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
- radial-gradient(circle, rgba(255,215,0,.75) 1px, transparent 2px),
- radial-gradient(circle, rgba(255,235,150,.6) 1px, transparent 2px);
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,215,0,.75) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,235,150,.6) 1px, transparent 2px);
 
- background-size: 60px 60px, 90px 90px, 140px 140px;
+  background-size: 60px 60px, 90px 90px, 140px 140px;
 
- transform: rotate(70deg);
+  transform: rotate(70deg);
+  animation: glitterSnow 35s linear infinite;
 
- animation: glitterSnow 25s linear infinite;
-
- opacity:.35;
+  opacity:.25;
+  z-index:1;
 }
 
-
-/* 🎬 animação suave estilo neve dourada */
+/* 🎬 ANIMAÇÃO SUAVE */
 @keyframes glitterSnow{
- 0%{
-  transform: rotate(70deg) translateY(-30%);
-  background-position: 0 -1200px, 0 -1400px, 0 -1600px;
- }
+  0%{
+    transform: rotate(70deg) translateY(-20%);
+    background-position:0 -1200px, 0 -1400px, 0 -1600px;
+  }
 
- 100%{
-  transform: rotate(70deg) translateY(30%);
-  background-position: 0 1200px, 0 1400px, 0 1600px;
- }
+  100%{
+    transform: rotate(70deg) translateY(20%);
+    background-position:0 1200px, 0 1400px, 0 1600px;
+  }
 }
 
-/* 📦 CONTAINER CENTRALIZADO CORRETAMENTE */
+/* 📦 CONTAINER */
 .container{
-  width: min(900px, 100%);
-  margin: 0 auto;
-  padding: 40px 20px;
+  width:min(900px,100%);
+  margin:0 auto;
+  padding:40px 20px;
 
-  position: relative;
-  z-index: 2;
+  position:relative;
+  z-index:2;
 }
 
 /* 🏛 HEADER */
 header{
- text-align:center;
- margin-bottom:30px;
+  text-align:center;
+  margin-bottom:30px;
 }
 
 h1{
- font-family:"Cinzel Decorative", cursive;
- font-weight:700;
- font-size:3.6rem;
- color:#fff;
+  font-family:"Cinzel Decorative", cursive;
+  font-weight:700;
+  font-size:3.6rem;
+  color:#fff;
 
- text-shadow:
- 0 2px 0 rgba(0,0,0,.35),
- 0 10px 30px rgba(0,0,0,.45),
- 0 0 20px rgba(218,165,32,.25);
+  text-shadow:
+    0 2px 0 rgba(0,0,0,.35),
+    0 10px 30px rgba(0,0,0,.45),
+    0 0 20px rgba(218,165,32,.25);
 }
 
 .subtitle{
- max-width:720px;
- margin:18px auto 0;
- color:rgba(255,255,255,.92);
- line-height:1.8;
- font-size:1.05rem;
- text-shadow:0 2px 10px rgba(0,0,0,.25);
+  max-width:720px;
+  margin:18px auto 0;
+  color:rgba(255,255,255,.92);
+  line-height:1.8;
+  font-size:1.05rem;
+  text-shadow:0 2px 10px rgba(0,0,0,.25);
 }
 
 /* 🪶 CARD */
 .card{
- background:rgba(255,248,231,.97);
- border-radius:22px;
- padding:50px;
- box-shadow:0 25px 80px rgba(0,0,0,.35);
- border:1px solid rgba(218,165,32,.6);
- backdrop-filter:blur(8px);
+  background:rgba(255,248,231,.97);
+  border-radius:22px;
+  padding:50px;
+  box-shadow:0 25px 80px rgba(0,0,0,.35);
+  border:1px solid rgba(218,165,32,.6);
+  backdrop-filter:blur(8px);
 }
 
 .card-header{
- text-align:center;
- font-weight:600;
- color:var(--gold);
- margin-bottom:25px;
+  text-align:center;
+  font-weight:600;
+  color:var(--gold);
+  margin-bottom:25px;
 }
 
+/* 💬 MENSAGEM */
 #mensagem{
- min-height:150px;
- display:flex;
- align-items:center;
- justify-content:center;
- text-align:center;
- font-family:'Cormorant Garamond',serif;
- font-size:2.2rem;
- color:#2a1a10;
+  min-height:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;
+  color:#2a1a10;
 }
 
 /* 🔘 BOTÃO */
 button{
- display:block;
- margin:35px auto 0;
- background:linear-gradient(135deg,var(--gold),var(--gold2));
- color:#2a1e12;
- border:none;
- border-radius:12px;
- padding:16px 34px;
- font-size:1rem;
- cursor:pointer;
- transition:.25s;
+  display:block;
+  margin:35px auto 0;
+
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#2a1e12;
+
+  border:none;
+  border-radius:12px;
+  padding:16px 34px;
+
+  font-size:1rem;
+  cursor:pointer;
+
+  transition:.25s;
 }
 
 button:hover{
- transform:translateY(-3px) scale(1.02);
+  transform:translateY(-3px) scale(1.02);
 }
 
 /* 🏷 FOOTER */
 footer{
- margin-top:30px;
- text-align:center;
- color:rgba(255,255,255,.92);
+  margin-top:30px;
+  text-align:center;
+  color:rgba(255,255,255,.92);
+  line-height:1.6;
 }
 
-/* 📱 MOBILE ESTÁVEL */
-@media (max-width: 700px){
+/* 📱 MOBILE */
+@media (max-width:700px){
+
+  body{
+    padding:20px 10px;
+  }
 
   h1{
     font-size:1.6rem;
@@ -193,8 +203,8 @@ footer{
     font-size:0.7rem;
   }
 
-  /* leve redução do glitter no mobile */
+  /* glitter mais leve no celular */
   .bg::after{
-    opacity:0.12;
+    opacity:0.18;
   }
 }
