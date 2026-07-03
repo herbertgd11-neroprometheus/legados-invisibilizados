@@ -51,12 +51,12 @@ body::before{
 @keyframes glitterMove{
  0%{
   transform: rotate(70deg) translateY(-30%);
-  background-position:0 -1200px, 0 -1500px, 0 -1800px;
+  background-position:0 -1200px, 0 -1400px, 0 -1600px;
  }
 
  100%{
   transform: rotate(70deg) translateY(30%);
-  background-position:0 1200px, 0 1500px, 0 1800px;
+  background-position:0 1400px, 0 1600px, 0 1800px;
  }
 }
 
