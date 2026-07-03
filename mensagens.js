@@ -1,6 +1,6 @@
 const mensagens = [
   {
-      inspiracao: "Seja resiliente como Hannah Arendt."
+    inspiracao: "Seja resiliente como Hannah Arendt."
   },
   {
     inspiracao: "Descubra o mundo como Marie Curie."
@@ -39,21 +39,21 @@ const mensagens = [
     inspiracao: "O reconhecimento é uma forma de justiça."
   },
   {
-   inspiracao: "Defenda o conhecimento como Hipátia de Alexandria"
-  },
-{
-    inspiracao: "Desbrave o mundo como Amélie Earhart.”
+    inspiracao: "Defenda o conhecimento como Hipátia de Alexandria."
   },
   {
-    inspiracao: " “Nada na vida deve ser temido, deve ser apenas compreendido. Agora é a hora de entender mais, para que possamos temer menos.” - Marie Curie.”
+    inspiracao: "Desbrave o mundo como Amelia Earhart."
   },
   {
-    inspiracao: "Seja forte como Rosa Parks foi.”
+    inspiracao: "Nada na vida deve ser temido, deve ser apenas compreendido. Agora é a hora de entender mais, para que possamos temer menos. — Marie Curie"
   },
   {
-  inspiracao: "Defenda a emancipação feminina assim como Simone de Beauvoir.”
+    inspiracao: "Seja forte como Rosa Parks foi."
   },
   {
-  inspiracao: "Deixe seu legado na história, assim como fez Maria Firmina dos Reis.”
+    inspiracao: "Defenda a emancipação feminina assim como Simone de Beauvoir."
+  },
+  {
+    inspiracao: "Deixe seu legado na História, assim como fez Maria Firmina dos Reis."
   }
 ];
