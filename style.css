@@ -198,38 +198,36 @@ footer{
 }
 
 /* 📱 responsivo */
-@media(max-width:700px){
+@media (max-width: 700px){
 
- h1{
-  font-size:1.55rem;
- }
+  h1{
+    font-size:1.6rem;
+  }
 
- .subtitle{
-  font-size:0.780rem;
-  line-height:1.4;
-  margin-top:12px;
-  padding:0 10px;
- }
+  .subtitle{
+    font-size:0.78rem;
+    line-height:1.4;
+  }
 
- .card{
-  padding:25px;
- }
+  .card{
+    padding:25px;
+  }
 
- #mensagem{
-  font-size:1.3rem;
- }
+  #mensagem{
+    font-size:1.3rem;
+  }
 
- /* 🔘 BOTÃO NO CELULAR */
- button{
-  font-size:0.8rem;
-  padding:12px 20px;
-  border-radius:10px;
- }
+  button{
+    font-size:0.8rem;
+    padding:12px 20px;
+  }
 
- /* 🏷 RODAPÉ NO CELULAR */
- footer{
-  font-size:0.70rem;
-  line-height:1.4;
-  padding:0 10px;
- }
+  footer{
+    font-size:0.7rem;
+  }
+
+  /* ✨ reduz impacto do glitter no mobile */
+  .bg::after{
+    opacity:0.15;
+  }
 }
