@@ -35,4 +35,7 @@ const mensagens = [
   {
     inspiracao: "O reconhecimento é uma forma de justiça."
   }
+  {
+   inspiracao: "Defenda o conhecimento como Hipátia de Alexandria"
+  }
 ];
