@@ -1,0 +1,226 @@
+:root{
+ --gold:#DAA520;
+ --gold2:#F2C14E;
+ --gold3:#B8860B;
+ --dark:#2A1E12;
+ --ivory:#FFF8E7;
+}
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+body{
+ min-height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ padding:40px 20px;
+ font-family:'Inter',sans-serif;
+ color:var(--dark);
+ overflow:hidden;
+ position:relative;
+
+ background:
+ radial-gradient(circle at top left, rgba(255,215,120,.35), transparent 40%),
+ radial-gradient(circle at bottom right, rgba(218,165,32,.25), transparent 45%),
+ linear-gradient(135deg,#DAA520,#B8860B,#8B6508);
+}
+
+/* ✨ GLITTER DIAGONAL REAL */
+body::before{
+ content:"";
+ position:fixed;
+ top:-50%;
+ left:-50%;
+ width:200%;
+ height:200%;
+ pointer-events:none;
+
+ background-image:
+ radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
+ radial-gradient(circle, rgba(255,215,0,.85) 1px, transparent 2px),
+ radial-gradient(circle, rgba(255,235,150,.75) 1px, transparent 2px);
+
+ background-size: 50px 50px, 80px 80px, 120px 120px;
+
+ transform: rotate(70deg);
+
+ animation: glitterMove 12s linear infinite;
+
+ opacity:.6;
+}
+
+@keyframes glitterMove{
+ 0%{
+  transform: rotate(70deg) translateY(-20%);
+  background-position:0 -1000px, 0 -1200px, 0 -1400px;
+ }
+
+ 100%{
+  transform: rotate(70deg) translateY(20%);
+  background-position:0 1000px, 0 1200px, 0 1400px;
+ }
+}
+
+/* 📦 CONTAINER */
+.container{
+ width:min(900px,100%);
+}
+
+/* 🏛 HEADER COM PLACA DE MUSEU */
+header{
+ text-align:center;
+ margin-bottom:30px;
+}
+
+/* ✨ TÍTULO PRINCIPAL DESTACADO */
+h1{
+ font-family:'Cormorant Garamond',serif;
+ font-size:3.8rem;
+ color:#fff;
+ letter-spacing:1px;
+
+ text-align:center;
+
+ /* ✨ integração com o fundo */
+ text-shadow:
+ 0 2px 0 rgba(0,0,0,.25),
+ 0 10px 30px rgba(0,0,0,.35),
+ 0 0 18px rgba(218,165,32,.35);
+
+ position:relative;
+}
+
+/* ✨ leve brilho dourado sutil atrás do título */
+h1::after{
+ content:"";
+ position:absolute;
+ inset:-20px -40px;
+ background:radial-gradient(circle, rgba(218,165,32,.18), transparent 60%);
+ z-index:-1;
+ filter:blur(10px);
+}
+
+/* subtítulo mais legível */
+.subtitle{
+ max-width:720px;
+ margin:18px auto 0;
+ color:rgba(255,255,255,.92);
+ line-height:1.8;
+ font-size:1.05rem;
+ text-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+
+/* 🪶 CARD */
+.card{
+ background:rgba(255,248,231,.97);
+ border-radius:22px;
+ padding:50px;
+ box-shadow:0 25px 80px rgba(0,0,0,.35);
+ border:1px solid rgba(218,165,32,.6);
+ backdrop-filter:blur(8px);
+}
+
+/* ✨ topo card */
+.card-header{
+ text-align:center;
+ font-weight:600;
+ color:var(--gold);
+ letter-spacing:1px;
+ margin-bottom:25px;
+}
+
+/* 💬 mensagem */
+#mensagem{
+ min-height:150px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ font-family:'Cormorant Garamond',serif;
+ font-size:2.2rem;
+ line-height:1.5;
+ color:#2a1a10;
+}
+
+/* ✨ divisor */
+.divider{
+ height:1px;
+ background:linear-gradient(to right,transparent,var(--gold),transparent);
+ margin:30px 0;
+}
+
+/* 📖 reflexão */
+#reflexao{
+ text-align:center;
+ line-height:1.8;
+ color:#5a4630;
+}
+
+/* 🔘 botão ouro */
+button{
+ display:block;
+ margin:35px auto 0;
+ background:linear-gradient(135deg,var(--gold),var(--gold2));
+ color:#2a1e12;
+ border:none;
+ border-radius:12px;
+ padding:16px 34px;
+ font-size:1rem;
+ cursor:pointer;
+ transition:.25s;
+ box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+button:hover{
+ transform:translateY(-3px) scale(1.02);
+ box-shadow:0 18px 40px rgba(0,0,0,.3);
+}
+
+/* 🏷 footer */
+footer{
+ margin-top:30px;
+ text-align:center;
+ color:rgba(255,255,255,.92);
+ line-height:1.7;
+}
+
+/* 📱 responsivo */
+@media(max-width:700px){
+
+ h1{
+  font-size:1.55rem;
+ }
+
+ .subtitle{
+  font-size:0.780rem;
+  line-height:1.4;
+  margin-top:12px;
+  padding:0 10px;
+ }
+
+ .card{
+  padding:25px;
+ }
+
+ #mensagem{
+  font-size:1.3rem;
+ }
+
+ /* 🔘 BOTÃO NO CELULAR */
+ button{
+  font-size:0.8rem;
+  padding:12px 20px;
+  border-radius:10px;
+ }
+
+ /* 🏷 RODAPÉ NO CELULAR */
+ footer{
+  font-size:0.70rem;
+  line-height:1.4;
+  padding:0 10px;
+ }
+}
