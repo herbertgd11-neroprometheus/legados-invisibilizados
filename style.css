@@ -23,6 +23,13 @@ body{
  overflow:hidden;
  position:relative;
 
+.bg::after{
+  content:"";
+  position: fixed;
+  inset: -50%;
+  pointer-events:none;
+  z-index: -1;
+ 
  /* 🟡 OURO FUMÊ (mais escuro e elegante) */
  background:
  radial-gradient(circle at top left, rgba(255,215,120,.18), transparent 45%),
