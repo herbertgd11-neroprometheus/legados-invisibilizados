@@ -13,18 +13,23 @@
 }
 
 body{
- background-repeat: no-repeat;
- background-size: cover;
- background-attachment: fixed;
- min-height:100vh;
- display:flex;
- justify-content:center;
- align-items:center;
- padding:40px 20px;
- font-family:'Inter',sans-serif;
- color:var(--dark);
- overflow:hidden;
- position:relative;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 20px;
+  font-family:'Inter',sans-serif;
+  color:var(--dark);
+  position:relative;
+
+  overflow-x:hidden;
+  overflow-y:auto;
+
+  background:
+  radial-gradient(circle at top left, rgba(255,215,120,.18), transparent 45%),
+  radial-gradient(circle at bottom right, rgba(218,165,32,.15), transparent 50%),
+  linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
+}
 
  /* 🟡 OURO FUMÊ (mais escuro e elegante) */
  background:
