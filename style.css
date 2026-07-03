@@ -75,9 +75,12 @@ body::before{
  }
 }
 
-/* 📦 CONTAINER */
+/* 📦 CONTAINER SIMPLES (SEM BUG DE VIEWPORT) */
 .container{
- width:min(900px,100%);
+  width: min(900px, 100%);
+  margin: auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* 🏛 HEADER COM PLACA DE MUSEU */
