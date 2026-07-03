@@ -22,7 +22,9 @@ body{
  color:var(--dark);
  overflow:hidden;
  position:relative;
+}
 
+/* 🌌 FUNDO FIXO REAL */
 .bg::after{
   content:"";
   position: fixed;
