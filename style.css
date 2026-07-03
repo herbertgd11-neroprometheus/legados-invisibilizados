@@ -26,40 +26,31 @@ body{
   overflow-y:auto;
 
   background:
-  radial-gradient(circle at top left, rgba(255,215,120,.18), transparent 45%),
-  radial-gradient(circle at bottom right, rgba(218,165,32,.15), transparent 50%),
-  linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
+    radial-gradient(circle at top left, rgba(255,215,120,.18), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(218,165,32,.15), transparent 50%),
+    linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
 }
 
- /* 🟡 OURO FUMÊ (mais escuro e elegante) */
- background:
- radial-gradient(circle at top left, rgba(255,215,120,.18), transparent 45%),
- radial-gradient(circle at bottom right, rgba(218,165,32,.15), transparent 50%),
- linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
-}
-
-/* ✨ GLITTER DIAGONAL REAL */
+/* ✨ GLITTER DIAGONAL */
 body::before{
- content:"";
- position:fixed;
- top:-60%;
- left:-60%;
- width:220%;
- height:220%;
- pointer-events:none;
+  content:"";
+  position:fixed;
+  top:-60%;
+  left:-60%;
+  width:220%;
+  height:220%;
+  pointer-events:none;
 
- background-image:
- radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
- radial-gradient(circle, rgba(255,215,0,.75) 1px, transparent 2px),
- radial-gradient(circle, rgba(255,235,150,.6) 1px, transparent 2px);
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,215,0,.75) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,235,150,.6) 1px, transparent 2px);
 
- background-size: 60px 60px, 90px 90px, 140px 140px;
+  background-size: 60px 60px, 90px 90px, 140px 140px;
 
- transform: rotate(70deg);
-
- animation: glitterSnow 25s linear infinite;
-
- opacity:.35;
+  transform: rotate(70deg);
+  animation: glitterSnow 25s linear infinite;
+  opacity:.35;
 }
 
 @keyframes glitterSnow{
@@ -79,13 +70,13 @@ body::before{
  width:min(900px,100%);
 }
 
-/* 🏛 HEADER COM PLACA DE MUSEU */
+/* 🏛 HEADER */
 header{
  text-align:center;
  margin-bottom:30px;
 }
 
-/* ✨ TÍTULO PRINCIPAL DESTACADO */
+/* ✨ TÍTULO */
 h1{
  font-family: "Cinzel Decorative", cursive;
  font-weight:700;
@@ -99,7 +90,7 @@ h1{
  0 0 20px rgba(218,165,32,.25);
 }
 
-/* ✨ leve brilho dourado sutil atrás do título */
+/* brilho atrás do título */
 h1::after{
  content:"";
  position:absolute;
@@ -109,7 +100,6 @@ h1::after{
  filter:blur(10px);
 }
 
-/* subtítulo mais legível */
 .subtitle{
  max-width:720px;
  margin:18px auto 0;
@@ -129,7 +119,7 @@ h1::after{
  backdrop-filter:blur(8px);
 }
 
-/* ✨ topo card */
+/* topo card */
 .card-header{
  text-align:center;
  font-weight:600;
@@ -138,7 +128,7 @@ h1::after{
  margin-bottom:25px;
 }
 
-/* 💬 mensagem */
+/* mensagem */
 #mensagem{
  min-height:150px;
  display:flex;
@@ -151,21 +141,21 @@ h1::after{
  color:#2a1a10;
 }
 
-/* ✨ divisor */
+/* divisor */
 .divider{
  height:1px;
  background:linear-gradient(to right,transparent,var(--gold),transparent);
  margin:30px 0;
 }
 
-/* 📖 reflexão */
+/* reflexão */
 #reflexao{
  text-align:center;
  line-height:1.8;
  color:#5a4630;
 }
 
-/* 🔘 botão ouro */
+/* botão */
 button{
  display:block;
  margin:35px auto 0;
@@ -185,7 +175,7 @@ button:hover{
  box-shadow:0 18px 40px rgba(0,0,0,.3);
 }
 
-/* 🏷 footer */
+/* footer */
 footer{
  margin-top:30px;
  text-align:center;
@@ -193,44 +183,44 @@ footer{
  line-height:1.7;
 }
 
-/* 📱 responsivo */
-@media (max-width: 100px){
+/* 📱 MOBILE */
+@media (max-width: 700px){
+
+  /* DESLIGA GLITTER NO CELULAR */
   body::before{
     animation: none !important;
     transform: none !important;
-    opacity: .12;
+    opacity: .10;
   }
 
- h1{
-  font-size:1.55rem;
- }
+  h1{
+    font-size:1.55rem;
+  }
 
- .subtitle{
-  font-size:0.780rem;
-  line-height:1.4;
-  margin-top:12px;
-  padding:0 10px;
- }
+  .subtitle{
+    font-size:0.78rem;
+    line-height:1.4;
+    margin-top:12px;
+    padding:0 10px;
+  }
 
- .card{
-  padding:25px;
- }
+  .card{
+    padding:25px;
+  }
 
- #mensagem{
-  font-size:1.3rem;
- }
+  #mensagem{
+    font-size:1.3rem;
+  }
 
- /* 🔘 BOTÃO NO CELULAR */
- button{
-  font-size:0.8rem;
-  padding:12px 20px;
-  border-radius:10px;
- }
+  button{
+    font-size:0.8rem;
+    padding:12px 20px;
+    border-radius:10px;
+  }
 
- /* 🏷 RODAPÉ NO CELULAR */
- footer{
-  font-size:0.70rem;
-  line-height:1.4;
-  padding:0 10px;
- }
+  footer{
+    font-size:0.70rem;
+    line-height:1.4;
+    padding:0 10px;
+  }
 }
