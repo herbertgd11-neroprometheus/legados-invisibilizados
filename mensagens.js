@@ -40,5 +40,20 @@ const mensagens = [
   },
   {
    inspiracao: "Defenda o conhecimento como Hipátia de Alexandria"
+  },
+{
+    inspiracao: "Desbrave o mundo como Amélie Earhart.”
+  },
+  {
+    inspiracao: " “Nada na vida deve ser temido, deve ser apenas compreendido. Agora é a hora de entender mais, para que possamos temer menos.” - Marie Curie.”
+  },
+  {
+    inspiracao: "Seja forte como Rosa Parks foi.”
+  },
+  {
+  inspiracao: "Defenda a emancipação feminina assim como Simone de Beauvoir.”
+  },
+  {
+  inspiracao: "Deixe seu legado na história, assim como fez Maria Firmina dos Reis.”
   }
 ];
