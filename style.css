@@ -24,12 +24,15 @@ body::before{
     radial-gradient(circle at bottom right, rgba(218,165,32,.15), transparent 60%);
 }
 
-/* ✨ GLITTER REAL (DIV PRÓPRIA — SEM BUG) */
-.glitter{
-  position:fixed;
-  inset:-50%;
-  z-index:1;
-  pointer-events:none;
+/* ✨ GLITTER DIAGONAL REAL */
+body::before{
+ content:"";
+ position:fixed;
+ top:-60%;
+ left:-60%;
+ width:220%;
+ height:220%;
+ pointer-events:none;
 
   background-image:
     radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
