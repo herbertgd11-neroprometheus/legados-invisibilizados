@@ -16,6 +16,9 @@
 body{
   min-height: 100vh;
   margin: 0;
+ justify-content:center;
+ align-items:center;
+
 
   font-family: 'Inter', sans-serif;
   color: var(--dark);
@@ -37,27 +40,30 @@ body{
     linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
 }
 
-/* ✨ GLITTER (FUNCIONA NO PC E MOBILE) */
-.bg::after{
-  content:"";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
+/* ✨ GLITTER DIAGONAL REAL */
+body::before{
+ content:"";
+ position:fixed;
+ top:-60%;
+ left:-60%;
+ width:220%;
+ height:220%;
+ pointer-events:none;
 
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,215,0,.75) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,235,150,.6) 1px, transparent 2px);
+ background-image:
+ radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
+ radial-gradient(circle, rgba(255,215,0,.75) 1px, transparent 2px),
+ radial-gradient(circle, rgba(255,235,150,.6) 1px, transparent 2px);
 
-  background-size: 80px 80px, 120px 120px, 160px 160px;
+ background-size: 60px 60px, 90px 90px, 140px 140px;
 
-  transform: rotate(70deg);
-  animation: glitterSnow 45s linear infinite;
+ transform: rotate(70deg);
 
-  opacity: .22;
+ animation: glitterSnow 25s linear infinite;
 
-  z-index: 1;
+ opacity:.35;
 }
+
 
 /* 🎬 animação suave estilo neve dourada */
 @keyframes glitterSnow{
