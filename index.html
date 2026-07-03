@@ -1,207 +1,50 @@
-:root{
- --gold:#DAA520;
- --gold2:#F2C14E;
- --gold3:#B8860B;
- --dark:#2A1E12;
- --ivory:#FFF8E7;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Legados Invisibilizados</title>
 
-*{
- margin:0;
- padding:0;
- box-sizing:border-box;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-/* 🔒 trava base do viewport (evita “movimento fantasma”) */
-html, body{
- height:100%;
- overflow-x:hidden;
-}
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
 
-/* 🟡 FUNDO FIXO REAL (SEM MOVIMENTO) */
-body::after{
-  content:"";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
+<body>
 
-  background:
-    radial-gradient(circle at top left, rgba(255,215,120,.18), transparent 45%),
-    radial-gradient(circle at bottom right, rgba(218,165,32,.15), transparent 50%),
-    linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
-}
+<div class="bg"></div>
 
-/* ✨ GLITTER (APENAS DESKTOP) */
-body::before{
-  content:"";
-  position: absolute;
-  top:-60%;
-  left:-60%;
-  width:220%;
-  height:220%;
-  pointer-events:none;
-  z-index:-1;
+<main class="container">
 
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,215,0,.75) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,235,150,.6) 1px, transparent 2px);
+<header>
+<h1>LEGADOS INVISIBILIZADOS</h1>
 
-  background-size: 60px 60px, 90px 90px, 140px 140px;
+<p class="subtitle">
+Nossa sociedade carrega o legado de mulheres que nem sempre foram reconhecidas. Cada inspiração é um convite para reconhecer essas trajetórias e o seu valor.
+</p>
+</header>
 
-  transform: rotate(70deg);
-  animation: glitterSnow 28s linear infinite;
-  opacity:.30;
-}
+<section class="card">
 
-/* animação leve */
-@keyframes glitterSnow{
- 0%{
-  transform: rotate(70deg) translateY(-20%);
-  background-position:0 -1000px, 0 -1200px, 0 -1400px;
- }
- 100%{
-  transform: rotate(70deg) translateY(20%);
-  background-position:0 1000px, 0 1200px, 0 1400px;
- }
-}
+<div class="card-header">✨ Inspiração</div>
 
-/* 📦 CONTAINER */
-.container{
- width:min(900px,100%);
- position:relative;
- z-index:1;
-}
+<div id="mensagem"></div>
 
-/* 🏛 HEADER */
-header{
- text-align:center;
- margin-bottom:30px;
-}
+<button id="sortear">🎲 SORTEAR NOVA INSPIRAÇÃO</button>
 
-/* ✨ TÍTULO */
-h1{
- font-family: "Cinzel Decorative", cursive;
- font-weight:700;
- font-size:3.8rem;
- color:#fff;
- text-shadow:
- 0 2px 0 rgba(0,0,0,.35),
- 0 10px 30px rgba(0,0,0,.45),
- 0 0 20px rgba(218,165,32,.25);
-}
+</section>
 
-/* brilho leve */
-h1::after{
- content:"";
- position:absolute;
- inset:-20px -40px;
- background:radial-gradient(circle, rgba(218,165,32,.18), transparent 60%);
- z-index:-1;
- filter:blur(10px);
-}
+<footer>
+Projeto <strong>Legados Invisibilizados</strong><br>
+MCHAT - CEM 01 BRAZLÂNDIA
+</footer>
 
-.subtitle{
- max-width:720px;
- margin:18px auto 0;
- color:rgba(255,255,255,.92);
- line-height:1.8;
- font-size:1.05rem;
- text-shadow:0 2px 10px rgba(0,0,0,.25);
-}
+</main>
 
-/* 🪶 CARD */
-.card{
- background:rgba(255,248,231,.97);
- border-radius:22px;
- padding:50px;
- box-shadow:0 25px 80px rgba(0,0,0,.35);
- border:1px solid rgba(218,165,32,.6);
- backdrop-filter:blur(8px);
-}
+<script src="mensagens.js"></script>
+<script src="script.js"></script>
 
-/* topo card */
-.card-header{
- text-align:center;
- font-weight:600;
- color:var(--gold);
- letter-spacing:1px;
- margin-bottom:25px;
-}
-
-/* mensagem */
-#mensagem{
- min-height:150px;
- display:flex;
- align-items:center;
- justify-content:center;
- text-align:center;
- font-family:'Cormorant Garamond',serif;
- font-size:2.2rem;
- line-height:1.5;
- color:#2a1a10;
-}
-
-/* botão */
-button{
- display:block;
- margin:35px auto 0;
- background:linear-gradient(135deg,var(--gold),var(--gold2));
- color:#2a1e12;
- border:none;
- border-radius:12px;
- padding:16px 34px;
- font-size:1rem;
- cursor:pointer;
- transition:.25s;
- box-shadow:0 12px 30px rgba(0,0,0,.25);
-}
-
-button:hover{
- transform:translateY(-3px) scale(1.02);
-}
-
-/* footer */
-footer{
- margin-top:30px;
- text-align:center;
- color:rgba(255,255,255,.92);
- line-height:1.7;
-}
-
-/* 📱 MOBILE (SEM MOVIMENTO) */
-@media (max-width: 700px){
-
-  body::before{
-    display:none !important;
-  }
-
-  h1{
-    font-size:1.55rem;
-  }
-
-  .subtitle{
-    font-size:0.78rem;
-    line-height:1.4;
-    padding:0 10px;
-  }
-
-  .card{
-    padding:25px;
-  }
-
-  #mensagem{
-    font-size:1.3rem;
-  }
-
-  button{
-    font-size:0.8rem;
-    padding:12px 20px;
-  }
-
-  footer{
-    font-size:0.70rem;
-    line-height:1.4;
-    padding:0 10px;
-  }
-}
+</body>
+</html>
