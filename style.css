@@ -12,15 +12,14 @@
  box-sizing:border-box;
 }
 
-/* 🔒 trava base do viewport (evita “movimento fantasma”) */
+/* 🔒 TRAVA TOTAL DO BODY */
 html, body{
- height:100%;
- overflow-x:hidden;
+  height:100%;
+  overflow:hidden;
 }
 
-/* 🟡 FUNDO FIXO REAL (SEM MOVIMENTO) */
-body::after{
-  content:"";
+/* 🟡 FUNDO FIXO REAL */
+.bg{
   position: fixed;
   inset: 0;
   z-index: -2;
@@ -31,16 +30,12 @@ body::after{
     linear-gradient(135deg,#8B6B12,#6F5410,#4A3A0B);
 }
 
-/* ✨ GLITTER (APENAS DESKTOP) */
-body::before{
+/* ✨ GLITTER (DESKTOP SÓ) */
+.bg::after{
   content:"";
-  position: absolute;
-  top:-60%;
-  left:-60%;
-  width:220%;
-  height:220%;
+  position:absolute;
+  inset:-50%;
   pointer-events:none;
-  z-index:-1;
 
   background-image:
     radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px),
@@ -50,11 +45,10 @@ body::before{
   background-size: 60px 60px, 90px 90px, 140px 140px;
 
   transform: rotate(70deg);
-  animation: glitterSnow 28s linear infinite;
-  opacity:.30;
+  animation: glitterSnow 35s linear infinite;
+  opacity:.25;
 }
 
-/* animação leve */
 @keyframes glitterSnow{
  0%{
   transform: rotate(70deg) translateY(-20%);
@@ -66,22 +60,27 @@ body::before{
  }
 }
 
-/* 📦 CONTAINER */
+/* 📦 ÁREA DE SCROLL (SÓ AQUI ROLA) */
 .container{
- width:min(900px,100%);
- position:relative;
- z-index:1;
+  position: relative;
+  height: 100vh;
+  overflow-y: auto;
+
+  width: min(900px,100%);
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  z-index: 1;
 }
 
-/* 🏛 HEADER */
+/* HEADER */
 header{
  text-align:center;
  margin-bottom:30px;
 }
 
-/* ✨ TÍTULO */
 h1{
- font-family: "Cinzel Decorative", cursive;
+ font-family:"Cinzel Decorative", cursive;
  font-weight:700;
  font-size:3.8rem;
  color:#fff;
@@ -89,16 +88,6 @@ h1{
  0 2px 0 rgba(0,0,0,.35),
  0 10px 30px rgba(0,0,0,.45),
  0 0 20px rgba(218,165,32,.25);
-}
-
-/* brilho leve */
-h1::after{
- content:"";
- position:absolute;
- inset:-20px -40px;
- background:radial-gradient(circle, rgba(218,165,32,.18), transparent 60%);
- z-index:-1;
- filter:blur(10px);
 }
 
 .subtitle{
@@ -110,7 +99,7 @@ h1::after{
  text-shadow:0 2px 10px rgba(0,0,0,.25);
 }
 
-/* 🪶 CARD */
+/* CARD */
 .card{
  background:rgba(255,248,231,.97);
  border-radius:22px;
@@ -120,16 +109,13 @@ h1::after{
  backdrop-filter:blur(8px);
 }
 
-/* topo card */
 .card-header{
  text-align:center;
  font-weight:600;
  color:var(--gold);
- letter-spacing:1px;
  margin-bottom:25px;
 }
 
-/* mensagem */
 #mensagem{
  min-height:150px;
  display:flex;
@@ -138,11 +124,10 @@ h1::after{
  text-align:center;
  font-family:'Cormorant Garamond',serif;
  font-size:2.2rem;
- line-height:1.5;
  color:#2a1a10;
 }
 
-/* botão */
+/* BOTÃO */
 button{
  display:block;
  margin:35px auto 0;
@@ -154,36 +139,33 @@ button{
  font-size:1rem;
  cursor:pointer;
  transition:.25s;
- box-shadow:0 12px 30px rgba(0,0,0,.25);
 }
 
 button:hover{
  transform:translateY(-3px) scale(1.02);
 }
 
-/* footer */
+/* FOOTER */
 footer{
  margin-top:30px;
  text-align:center;
  color:rgba(255,255,255,.92);
- line-height:1.7;
 }
 
-/* 📱 MOBILE (SEM MOVIMENTO) */
+/* 📱 MOBILE */
 @media (max-width: 700px){
 
-  body::before{
+  .bg::after{
     display:none !important;
   }
 
   h1{
-    font-size:1.55rem;
+    font-size:1.6rem;
   }
 
   .subtitle{
     font-size:0.78rem;
     line-height:1.4;
-    padding:0 10px;
   }
 
   .card{
@@ -200,8 +182,6 @@ footer{
   }
 
   footer{
-    font-size:0.70rem;
-    line-height:1.4;
-    padding:0 10px;
+    font-size:0.7rem;
   }
 }
