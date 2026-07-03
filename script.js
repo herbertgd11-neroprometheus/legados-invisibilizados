@@ -1,10 +1,10 @@
-function sortearInspiracao() {
+function sortearInspiração() {
   const indice = Math.floor(Math.random() * mensagens.length);
 
   document.getElementById("mensagem").innerText =
-    mensagens[indice];
+    mensagens[indice].inspiracao;
 }
 
-document.getElementById("sortear").addEventListener("click", sortearInspiracao);
+document.getElementById("sortear").addEventListener("click", sortearInspiração);
 
-sortearInspiracao();
+sortearInspiração();
