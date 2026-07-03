@@ -20,7 +20,7 @@ body{
  padding:40px 20px;
  font-family:'Inter',sans-serif;
  color:var(--dark);
- overflow-x:hidden;
+ overflow:hidden;
  position:relative;
 }
 
