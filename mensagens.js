@@ -9,7 +9,7 @@ const mensagens = [
     inspiracao: "Grandes transformações começam quando escolhemos conhecer histórias antes invisibilizadas."
   },
   {
-    inspiracao: "Maria da Penha, Bertha Lutz, Rosa Parks, Maria Firmina dos Reis, e inúmeras outras, lutaram para que você tivesse voz."
+    inspiracao: "Maria da Penha, Bertha Lutz, Rosa Parks, Maria Firmina dos Reis e inúmeras outras lutaram para que você tivesse voz."
   },
   {
     inspiracao: "Aprender também é reconhecer quem abriu caminhos antes de nós."
@@ -27,7 +27,7 @@ const mensagens = [
     inspiracao: "Cada pessoa pode contribuir para uma sociedade mais justa."
   },
   {
-    inspiracao: "Alcance o infinito assim como Valentina Tereshkova"
+    inspiracao: "Alcance o infinito assim como Valentina Tereshkova."
   },
   {
     inspiracao: "Respeito e conhecimento caminham juntos."
@@ -59,16 +59,31 @@ const mensagens = [
   {
     inspiracao: "Defenda a emancipação feminina assim como Simone de Beauvoir."
   },
-  {    
-    inspiracao: "Vamos pegar nossos livros e nossas canetas, essas são as armas mais poderosas. - Malala Yousafzai"
+  {
+    inspiracao: "Vamos pegar nossos livros e nossas canetas, essas são as armas mais poderosas. — Malala Yousafzai"
   },
   {
     inspiracao: "Não somos nascidas para silêncio, somos nascidas para falar. — Malala Yousafzai"
   },
   {
-     inspiracao: "Eu acho que a mulher do fim do mundo é aquela que busca, é aquela que grita, que reivindica, que sempre fica de pé. No fim, eu sou essa mulher - Elza Soares"
+    inspiracao: "Eu acho que a mulher do fim do mundo é aquela que busca, é aquela que grita, que reivindica, que sempre fica de pé. No fim, eu sou essa mulher. — Elza Soares"
   },
   {
     inspiracao: "Deixe seu legado na História, assim como fez Maria Firmina dos Reis."
+  },
+  {
+    inspiracao: "Molde o seu presente e construa seu futuro, assim como elas fizeram."
+  },
+  {
+    inspiracao: "Cada conquista de hoje é resultado da coragem de mulheres que vieram antes de nós."
+  },
+  {
+    inspiracao: "Aprender sobre essas grandes mulheres é também ampliar nossa compreensão sobre a História da humanidade."
+  },
+  {
+    inspiracao: "Toda voz que rompe o silêncio inspira outras a fazerem o mesmo."
+  },
+  {
+    inspiracao: "Que o legado dessas mulheres inspire novas gerações a construir um mundo mais justo."
   }
 ];
